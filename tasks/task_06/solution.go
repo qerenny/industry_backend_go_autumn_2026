@@ -29,7 +29,7 @@ func (c *LRUCache[K, V]) Get(key K) (value V, ok bool) {
 	return el.Value.(*entry[K, V]).value, true
 }
 func (c *LRUCache[K, V]) Set(key K, value V) {
-	if c.capacity = 0 {
+	if c.capacity <= 0 {
 		return
 	}
 
